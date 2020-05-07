@@ -17,13 +17,24 @@ function RenderMenuItem ({meal, onClick}) {
 
 
 const Menu = props => {
-    // const menu = props.meals.meals.map(meal => {
-    //     return (
-    //         <div key={meal.idMeal} className="col-12 col-md-5 m-1">
+
+    // const menu = () => {
+    // for(let meal of props.meals.meals) {
+    //     return(
+    //         <div key = {meal.idMeal} className='col-12 col-md-5 m-1'>
     //             <RenderMenuItem meal={meal} />
     //         </div>
     //     )
+    // }
+    // }
+    // const menu = props.meals.meals.meals.map(dish => {
+    //     return (
+    //         <div key={dish.id} className="col-12 col-md-5 m-1">
+    //             <RenderMenuItem dish={dish} />
+    //         </div>
+    //     )
     // });
+
 
 
     if(props.meals.isLoading) {
@@ -58,8 +69,7 @@ const Menu = props => {
                     </div>                
                 </div>
                 <div className="row">
-                    {/* {menu} */}
-                    
+                    <RenderMenuItem meal={props.meals.meals.meals[0]} />
                 </div>
             </div>
         );

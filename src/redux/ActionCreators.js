@@ -4,7 +4,6 @@ import {url} from '../shared/url';
 
 export const fetchMeals = () => (dispatch) => {
     dispatch(mealsLoading(true));
-
     return fetch(url + 'random.php')
         .then(response =>{
             if(response.ok) {
