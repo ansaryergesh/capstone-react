@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Home from './Home';
 import Header from './Header';
+import Footer from './Footer';
 import {Switch, Route, Redirect} from 'react-router-dom';
 
 class MainComponent extends Component {
@@ -12,7 +13,9 @@ class MainComponent extends Component {
                 <Route path = '/home' component={() => <Home/>}/>
                 <Redirect to='/home' />
             </Switch>
+            <Footer/>
             </div>
+         
         )
     }
 }
