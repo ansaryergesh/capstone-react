@@ -6,6 +6,7 @@ import Footer from './Footer';
 import MealDetail from './DetailMenu';
 import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { fetchMeals,} from '../redux/ActionCreators';
 import Category from './Categories';
 const mapStateToProps = state => {
@@ -39,13 +40,17 @@ class MainComponent extends Component {
         return (
             <div className='App'>
             <Header />
-            <Switch>
-                <Route path = '/home' component={() => <Home/>}/>
-                <Route exact path='/menu' component={() => <Menu meals={this.props.meals} />} />
-                <Route path="/menu/:mealId" component={MealWithId} />
-                <Route path='/categories' component={() => <Category />} />
-                <Redirect to='/home' />
-            </Switch>
+            <TransitionGroup>
+                <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
+                    <Switch>
+                        <Route path = '/home' component={() => <Home/>}/>
+                        <Route exact path='/menu' component={() => <Menu meals={this.props.meals} />} />
+                        <Route path="/menu/:mealId" component={MealWithId} />
+                        <Route path='/categories' component={() => <Category />} />
+                        <Redirect to='/home' />
+                    </Switch>
+                </CSSTransition>
+            </TransitionGroup>
             <Footer/>
             </div>
          

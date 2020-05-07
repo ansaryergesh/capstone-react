@@ -1,33 +1,24 @@
 import React from 'react';
-import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem,CardText } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import {Loading} from './Loader';
-function RenderMenuItem ({meal, onClick}) {
-    return (
-        <Card>
-            <Link to={`/menu/${meal.idMeal}`} >
-                <CardImg width="100%" src={meal.strMealThumb} alt={meal.strMeal} />
-                <CardImgOverlay>
-                    <CardTitle className='mealName'>{meal.strMeal}</CardTitle>
-                </CardImgOverlay>
-            </Link>
-        </Card>
-    );
-}
+// function RenderMenuItem ({meal, onClick}) {
+//     return (
+//         <Card>
+//             <Link to={`/menu/${meal.idMeal}`} >
+//                 <CardImg width="100%" src={meal.strMealThumb} alt={meal.strMeal} />
+//                 <CardImgOverlay>
+//                     <CardTitle className='mealName'>{meal.strMeal}</CardTitle>
+           
+//                 </CardImgOverlay>
+           
+//             </Link>
+//         </Card>
+//     );
+// }
 
 
 const Menu = props => {
-    // const menu = props.meals.meals.meals.map(meal => {
-    //     return (
-    //         <div key={meal.idMeal} className="col-12 col-md-5 m-1">
-    //             <RenderMenuItem meal={meal} />
-    //         </div>
-    //     )
-    // });
-
-
-
-
     if(props.meals.isLoading) {
         return(
             <div className='container'>
@@ -68,7 +59,9 @@ const Menu = props => {
                                         <CardImg width="100%" src={meal.strMealThumb} alt={meal.strMeal} />
                                         <CardImgOverlay>
                                             <CardTitle className='mealName'>{meal.strMeal}</CardTitle>
+                                          
                                         </CardImgOverlay>
+                                        <CardText className='category'>{meal.strCategory}</CardText>
                                     </Link>
                                 </Card>
                             </div>
