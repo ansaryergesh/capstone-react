@@ -1,6 +1,18 @@
 .App {
   text-align: center;
 }
+.mealName {
+  text-shadow: 0 13.36px 8.896px #1e4b75, 0 -2px 1px rgb(242, 248, 214) !important;
+  font-weight: bold !important;
+  color: black;
+  letter-spacing: 1px;
+  background-color: white !important;
+}
+.mealName:hover {
+  color: white;
+  text-shadow: 0 13.36px 8.896px #242323, 0 -2px 1px rgb(141, 55, 55) !important;
+  background-color: black !important;
+}
 
 .App-logo {
   height: 40vmin;

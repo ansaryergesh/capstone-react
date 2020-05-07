@@ -8,7 +8,7 @@ function RenderMenuItem ({meal, onClick}) {
             <Link to={`/menu/${meal.idMeal}`} >
                 <CardImg width="100%" src={meal.strMealThumb} alt={meal.strMeal} />
                 <CardImgOverlay>
-                    <CardTitle>{meal.strMeal}</CardTitle>
+                    <CardTitle className='mealName'>{meal.strMeal}</CardTitle>
                 </CardImgOverlay>
             </Link>
         </Card>
@@ -17,23 +17,14 @@ function RenderMenuItem ({meal, onClick}) {
 
 
 const Menu = props => {
-
-    // const menu = () => {
-    // for(let meal of props.meals.meals) {
-    //     return(
-    //         <div key = {meal.idMeal} className='col-12 col-md-5 m-1'>
+    // const menu = props.meals.meals.meals.map(meal => {
+    //     return (
+    //         <div key={meal.idMeal} className="col-12 col-md-5 m-1">
     //             <RenderMenuItem meal={meal} />
     //         </div>
     //     )
-    // }
-    // }
-    // const menu = props.meals.meals.meals.map(dish => {
-    //     return (
-    //         <div key={dish.id} className="col-12 col-md-5 m-1">
-    //             <RenderMenuItem dish={dish} />
-    //         </div>
-    //     )
     // });
+
 
 
 
@@ -69,7 +60,20 @@ const Menu = props => {
                     </div>                
                 </div>
                 <div className="row">
-                    <RenderMenuItem meal={props.meals.meals.meals[0]} />
+                    {props.meals.meals.meals.map(meal=>{
+                        return (
+                            <div key={meal.idMeal} className="col-12 col-md-5 m-1">
+                                <Card>
+                                    <Link to={`/menu/${meal.idMeal}`} >
+                                        <CardImg width="100%" src={meal.strMealThumb} alt={meal.strMeal} />
+                                        <CardImgOverlay>
+                                            <CardTitle className='mealName'>{meal.strMeal}</CardTitle>
+                                        </CardImgOverlay>
+                                    </Link>
+                                </Card>
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
         );
