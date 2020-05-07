@@ -7,13 +7,13 @@ export const Meals = (state = {
     meals: []
 }, action) => {
     switch (action.type) {
-        case ActionTypes.ADD_TEST:
+        case ActionTypes.ADD_MEALS:
             return { ...state, isLoading: false, errMess: null, meals: action.payload };
 
-        case ActionTypes.TEST_LOADING:
+        case ActionTypes.MEALS_LOADING:
             return { ...state, isLoading: true, errMess: null, meals: [] };
 
-        case ActionTypes.TEST_FAILED:
+        case ActionTypes.MEALS_FAILED:
             return { ...state, isLoading: false, errMess: action.payload, meals: [] };
 
         default:

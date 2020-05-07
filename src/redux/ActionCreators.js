@@ -1,8 +1,8 @@
 import * as ActionTypes from './ActionTypes';
-import { url} from '../shared/url';
+import {url} from '../shared/url';
 
 
-export const fetchTests = () => (dispatch) => {
+export const fetchMeals = () => (dispatch) => {
     dispatch(testsLoading(true));
 
     return fetch(url)
@@ -21,20 +21,20 @@ export const fetchTests = () => (dispatch) => {
             throw errmess;
         })
         .then(response => response.json())
-        .then(tests => dispatch(addTest(tests)))
-        .catch(error => dispatch(testsFailed(error.message)));
+        .then(meals => dispatch(addMeals(meals)))
+        .catch(error => dispatch(mealsFailed(error.message)));
 }
 
-export const testsLoading = () => ({
-    type: ActionTypes.TEST_LOADING
+export const mealsLoading = () => ({
+    type: ActionTypes.MEALS_LOADING
 });
 
-export const testsFailed = (errmess) => ({
-    type: ActionTypes.TEST_FAILED,
+export const mealsFailed = (errmess) => ({
+    type: ActionTypes.MEALS_FAILED,
     payload: errmess
 });
 
-export const addTest = (tests) => ({
-    type: ActionTypes.ADD_TEST,
-    payload: tests
+export const addMeals = (meals) => ({
+    type: ActionTypes.ADD_MEALS,
+    payload: meals
 });
