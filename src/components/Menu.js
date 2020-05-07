@@ -5,7 +5,7 @@ import {Loading} from './Loader';
 function RenderMenuItem ({meal, onClick}) {
     return (
         <Card>
-            <Link to={`/menu/${meal.id}`} >
+            <Link to={`/menu/${meal.idMeal}`} >
                 <CardImg width="100%" src={meal.strMealThumb} alt={meal.strMeal} />
                 <CardImgOverlay>
                     <CardTitle>{meal.strMeal}</CardTitle>
@@ -17,13 +17,14 @@ function RenderMenuItem ({meal, onClick}) {
 
 
 const Menu = props => {
-    const menu = props.meals.meals.map(meal => {
-        return (
-            <div key={meal.idMeal} className="col-12 col-md-5 m-1">
-                <RenderMenuItem meal={meal} />
-            </div>
-        )
-    });
+    // const menu = props.meals.meals.map(meal => {
+    //     return (
+    //         <div key={meal.idMeal} className="col-12 col-md-5 m-1">
+    //             <RenderMenuItem meal={meal} />
+    //         </div>
+    //     )
+    // });
+
 
     if(props.meals.isLoading) {
         return(
@@ -57,7 +58,8 @@ const Menu = props => {
                     </div>                
                 </div>
                 <div className="row">
-                    {menu}
+                    {/* {menu} */}
+                    
                 </div>
             </div>
         );

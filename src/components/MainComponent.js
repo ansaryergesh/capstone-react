@@ -6,7 +6,6 @@ import Footer from './Footer';
 import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchMeals,} from '../redux/ActionCreators';
-import {actions} from 'react-redux-form';
 import Category from './Categories';
 const mapStateToProps = state => {
     return {
