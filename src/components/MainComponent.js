@@ -11,7 +11,7 @@ import { fetchMeals,} from '../redux/ActionCreators';
 import Category from './Categories';
 const mapStateToProps = state => {
     return {
-      meals: state.meals,
+      meals: state.meals || []
     }
 }
 
@@ -19,24 +19,26 @@ const mapDispathToProps = dispatch => ({
   fetchMeals: () => {dispatch(fetchMeals())},
 });
 
-const MealWithId = ({match}) => {
-    return (
-        <MealDetail 
-        meal={this.props.meals.meals.filter(meal => meal.id === parseInt(match.params.mealId, 10))[0]} 
-        isLoading = {this.props.meals.isLoading}
-        errMess = {this.props.meals.errMess}
-            />
-    );
-}
 
 
 class MainComponent extends Component {
     componentDidMount() {
         this.props.fetchMeals();
+        
     }
     
     render() {
-        
+        const MealWithId = ({match}) => {
+            return (
+                <MealDetail 
+                meal={this.props.meals.meals.meals.filter(meal => meal.idMeal === match.params.mealId.toString())[0]} 
+                isLoading = {this.props.meals.isLoading}
+                errMess = {this.props.meals.errMess}
+                    />
+            );
+        }
+
+   
         return (
             <div className='App'>
             <Header />
