@@ -7,7 +7,7 @@ export const ConfigureStore = () => {
     const store = createStore(
         combineReducers({
             meals: Meals,
-            categories: Categories,
+            filters: Categories,
         }),
         applyMiddleware(thunk, logger)
     );

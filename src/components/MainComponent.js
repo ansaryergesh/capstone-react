@@ -7,11 +7,12 @@ import MealDetail from './DetailMenu';
 import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import { fetchMeals,} from '../redux/ActionCreators';
+import { fetchMeals, filterChange} from '../redux/ActionCreators';
 import Contact from './Contact';
 const mapStateToProps = state => {
     return {
-      meals: state.meals || []
+      meals: state.meals || [],
+      filters: state.filters || [],
     }
 }
 
@@ -38,6 +39,14 @@ class MainComponent extends Component {
             );
         }
 
+        const mealsFilter = filters => {
+            if (filters === 'All') {
+              return this.props.meals;
+            }
+            const opt = this.props.meals.meals.meals.filter(val => val.category === filters);
+            return opt;
+        };
+        
    
         return (
             <div className='App'>
@@ -46,7 +55,7 @@ class MainComponent extends Component {
                 <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
                     <Switch>
                         <Route path = '/home' component={() => <Home/>}/>
-                        <Route exact path='/menu' component={() => <Menu meals={this.props.meals} />} />
+                        <Route exact path='/menu' component={() => <Menu meals={mealsFilter(this.props.filters)} />} />
                         <Route path="/menu/:mealId" component={MealWithId} />
                         <Route path='/contact' component={() => <Contact />} />
                         <Redirect to='/home' />

@@ -2,20 +2,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-const CategoryFilter = ({ filterChange }) => {
-  const categories = ['Chicken', 'Pasta', 'History', 'Miscellaneous', 'Dessert', 'Pork', 'Vegetarian','Beef','Side'];
+const Categories = ({ filterChange }) => {
+  const categories = ['Chicken', 'Pasta', 'Miscellaneous', 'Dessert', 'Pork', 'Vegetarian','Beef','Side'];
 
   const handleFilterChange = e => {
-    if (e.target.value === 'All') {
-      return(
-        <Link to={'/menu'}/>
-      )
-    }
-    else {
-      return(
-        <Link to={`/menu/${(e.target.value).toLowerCase}`} />
-      )
-    }
+    filterChange(e.target.value);
 
   };
   return (
@@ -34,9 +25,9 @@ const CategoryFilter = ({ filterChange }) => {
   );
 };
 
-CategoryFilter.propTypes = {
+Categories.propTypes = {
   filterChange: PropTypes.func.isRequired,
 };
 
 
-export default CategoryFilter;
+export default Categories;
