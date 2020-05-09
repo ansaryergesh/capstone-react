@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem,CardText } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import {Loading} from './Loader';
-
+import Categories from './Categories';
 const Menu = props => {
     if(props.meals.isLoading) {
         return(
@@ -32,7 +32,9 @@ const Menu = props => {
                     </Breadcrumb>
                     <div className="col-12">
                         <h3>Menu</h3>
+                        <Categories/>
                         <hr />
+                     
                     </div>                
                 </div>
                 <div className="row">

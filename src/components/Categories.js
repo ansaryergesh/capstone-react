@@ -1,12 +1,22 @@
 /* eslint arrow-parens: [2, "as-needed"] */
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { Link } from 'react-router-dom';
 const CategoryFilter = ({ filterChange }) => {
   const categories = ['Chicken', 'Pasta', 'History', 'Miscellaneous', 'Dessert', 'Pork', 'Vegetarian','Beef','Side'];
 
   const handleFilterChange = e => {
-    filterChange(e.target.value);
+    if (e.target.value === 'All') {
+      return(
+        <Link to={'/menu'}/>
+      )
+    }
+    else {
+      return(
+        <Link to={`/menu/${(e.target.value).toLowerCase}`} />
+      )
+    }
+
   };
   return (
     <select
@@ -16,7 +26,9 @@ const CategoryFilter = ({ filterChange }) => {
     >
       <option value="All">All</option>
       { categories.map(category => (
+     
         <option key={category} value={category}>{category}</option>
+      
       ))}
     </select>
   );
