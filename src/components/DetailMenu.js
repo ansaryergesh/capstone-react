@@ -1,24 +1,38 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem, Button, Modal, ModalHeader, ModalBody, Row, Col, Label } from 'reactstrap';
+import { Card, CardImg, CardText, CardColumns, CardBody, CardTitle, Breadcrumb, BreadcrumbItem, Button, Modal, ModalHeader, ModalBody, Row, Col, Label } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 import { Loading } from './Loader';
-
+import ReactPlayer from "react-player"
     function RenderMeal({meal}){
-        
+        let videoLink = `${meal.strYoutube}`
         return (
+            
             <FadeTransform
                     in
                     transformProps={{
                         exitTransform: 'scale(0.5) translateY(-50%)'
                     }}>
-                    <Card>
-                        <CardImg width="100%" src={meal.strMealThumb} alt={meal.strMeal} />
-                        <CardBody>
-                            <CardTitle>{meal.strMeal}</CardTitle>
-                            <CardText>{meal.strInstructions}</CardText>
-                        </CardBody>
-                    </Card>
+                    <CardColumns >
+                        <Card>
+                            <CardImg width="100%" src={meal.strMealThumb} alt={meal.strMeal} />
+                            <CardBody>
+                                <CardTitle>{meal.strMeal}</CardTitle>
+                                <CardText>{meal.strInstructions}</CardText>
+                            </CardBody>
+                        </Card>
+                        <Card className='rightCard'>
+                               <p className='strTags'>{meal.strTags}</p>
+                            <CardBody>
+                                <CardTitle>Video:</CardTitle>
+                                <ReactPlayer className='youtube'
+                                    url={`${meal.strYoutube}`}
+                                />
+                            </CardBody>
+                        </Card>
+                    </CardColumns>
+                  
+                  
             </FadeTransform>
         );
     }
@@ -47,15 +61,15 @@ const MealDetail = props => {
                 <div className="row">
                     <Breadcrumb>
                         <BreadcrumbItem><Link to='/menu'>Menu</Link></BreadcrumbItem>
-                        <BreadcrumbItem active>{props.meal.name}</BreadcrumbItem>
+                        <BreadcrumbItem active>{props.meal.strMeal}</BreadcrumbItem>
                     </Breadcrumb>
                     <div className="col-12">
-                        <h3>{props.meal.name}</h3>
+                        <h3>{props.meal.strMeal}</h3>
                         <hr />
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-12 col-md-5 m-1">
+                    <div className="col-12">
                         <RenderMeal meal={props.meal} />
                     </div>
                 </div>

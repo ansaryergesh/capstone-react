@@ -1,6 +1,29 @@
 .App {
   text-align: center;
 }
+
+.card-columns {
+  display: flex !important;
+  justify-content: space-around;
+}
+
+.rightCard {
+  margin-left: 15px;
+  border: none !important
+}
+
+.strTags {
+  background-color: turquoise;
+  padding: 2px;
+  width: 50%;
+  margin: auto !important;
+  margin-top: 5px !important;
+}
+
+.youtube {
+  width: 100% !important;
+}
+
 .mealName {
   text-shadow: 0 13.36px 8.896px #1e4b75, 0 -2px 1px rgb(242, 248, 214) !important;
   font-weight: bold !important;
@@ -8,6 +31,7 @@
   letter-spacing: 1px;
   background-color: white !important;
 }
+
 .mealName:hover {
   color: white;
   text-shadow: 0 13.36px 8.896px #242323, 0 -2px 1px rgb(141, 55, 55) !important;
@@ -87,6 +111,7 @@
   background-color: rgb(19, 28, 82) !important;
   padding: 15px;
 }
+
 .category:hover {
   text-decoration: none !important;
 }
