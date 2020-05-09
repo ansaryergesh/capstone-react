@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
-import { Card, CardImg, CardText, CardColumns, CardBody, CardTitle, Breadcrumb, BreadcrumbItem, Button, Modal, ModalHeader, ModalBody, Row, Col, Label } from 'reactstrap';
+import React from 'react';
+import { Card, CardImg, CardText, CardColumns, CardBody, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { FadeTransform, Fade, Stagger } from 'react-animation-components';
+import { FadeTransform} from 'react-animation-components';
 import { Loading } from './Loader';
 import ReactPlayer from "react-player"
     function RenderMeal({meal}){
-        let videoLink = `${meal.strYoutube}`
         return (
             
             <FadeTransform

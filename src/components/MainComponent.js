@@ -8,7 +8,7 @@ import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { fetchMeals,} from '../redux/ActionCreators';
-import Category from './Categories';
+import Contact from './Contact';
 const mapStateToProps = state => {
     return {
       meals: state.meals || []
@@ -48,7 +48,7 @@ class MainComponent extends Component {
                         <Route path = '/home' component={() => <Home/>}/>
                         <Route exact path='/menu' component={() => <Menu meals={this.props.meals} />} />
                         <Route path="/menu/:mealId" component={MealWithId} />
-                        <Route path='/categories' component={() => <Category />} />
+                        <Route path='/contact' component={() => <Contact />} />
                         <Redirect to='/home' />
                     </Switch>
                 </CSSTransition>
