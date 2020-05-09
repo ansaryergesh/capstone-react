@@ -31,10 +31,10 @@ class Header extends Component {
                             <NavLink className='nav-link' to='/home'><span className='fa fa-home fa-lg'></span> Home</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink className='nav-link' to='/menu'><span className='fa fa-info fa-lg'></span> Menu</NavLink>
+                            <NavLink className='nav-link' to='/menu'><span className='fa fa-list fa-lg'></span> Menu</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink className='nav-link' to='/contact'><span className='fa fa-list fa-lg'></span> Categories</NavLink>
+                            <NavLink className='nav-link' to='/contact'><span className='fa fa-phone fa-lg'></span> Contact Us</NavLink>
                         </NavItem>
                     </Nav>
                   </Collapse>

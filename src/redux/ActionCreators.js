@@ -74,3 +74,8 @@ export const addCategories = (categories) => ({
     type: ActionTypes.ADD_CATEGORIES,
     payload: categories
 });
+
+export const filterChange = (filter) => ({
+    type: ActionTypes.FILTER_CATEGORY,
+    payload: filter
+})
