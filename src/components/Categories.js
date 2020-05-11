@@ -1,19 +1,17 @@
 /* eslint arrow-parens: [2, "as-needed"] */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 const Categories = ({ filterChange }) => {
   const categories = ['Chicken', 'Pasta', 'Miscellaneous', 'Dessert', 'Pork', 'Vegetarian','Beef','Side'];
 
   const handleFilterChange = e => {
     filterChange(e.target.value);
-
   };
   return (
     <select
       className="filterSelect"
       name="category"
-      onChange={handleFilterChange}
+      onChange={handleFilterChange} 
     >
       <option value="All">All</option>
       { categories.map(category => (

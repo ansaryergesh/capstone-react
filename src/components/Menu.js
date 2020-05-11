@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import {Loading} from './Loader';
 import Categories from './Categories';
 import { filterChange} from '../redux/ActionCreators';
-const Menu = (props) => {
+
+const Menu = (props, {filterChange}) => {
     if(props.meals.isLoading) {
         return(
             <div className='container'>

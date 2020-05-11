@@ -43,7 +43,7 @@ class MainComponent extends Component {
             if (filters === 'All') {
               return this.props.meals;
             }
-            const opt = this.props.meals.meals.meals.filter(val => val.category === filters);
+            const opt = this.props.meals.meals.meals.map(val => val.strCategory === filters);
             return opt;
         };
         
@@ -55,7 +55,7 @@ class MainComponent extends Component {
                 <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
                     <Switch>
                         <Route path = '/home' component={() => <Home/>}/>
-                        <Route exact path='/menu' component={() => <Menu meals={mealsFilter(this.props.filters)} />} />
+                        <Route exact path='/menu' component={() => <Menu meals={mealsFilter(this.props.filters)} filterChange={filterChange} />} />
                         <Route path="/menu/:mealId" component={MealWithId} />
                         <Route path='/contact' component={() => <Contact />} />
                         <Redirect to='/home' />
