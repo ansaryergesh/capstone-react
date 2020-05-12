@@ -18,6 +18,7 @@ const mapStateToProps = state => {
 
 const mapDispathToProps = dispatch => ({
   fetchMeals: () => {dispatch(fetchMeals())},
+  filterChange: (filters) => {dispatch(filterChange(filters))}
 });
 
 
@@ -41,7 +42,7 @@ class MainComponent extends Component {
 
         const mealsFilter = filters => {
             if (filters === 'All') {
-              return this.props.meals;
+              return this.props.meals
             }
             const opt = this.props.meals.meals.meals.map(val => val.strCategory === filters);
             return opt;
@@ -55,7 +56,7 @@ class MainComponent extends Component {
                 <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
                     <Switch>
                         <Route path = '/home' component={() => <Home/>}/>
-                        <Route exact path='/menu' component={() => <Menu meals={mealsFilter(this.props.filters)} filterChange={filterChange} />} />
+                        <Route exact path='/menu' component={() => <Menu meals={mealsFilter(this.props.filters)} filterChange={this.props.filterChange} />} />
                         <Route path="/menu/:mealId" component={MealWithId} />
                         <Route path='/contact' component={() => <Contact />} />
                         <Redirect to='/home' />
