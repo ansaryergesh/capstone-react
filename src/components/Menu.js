@@ -3,7 +3,7 @@ import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem,Ca
 import { Link } from 'react-router-dom';
 import {Loading} from './Loader';
 import Categories from './Categories';
-const Menu = (props, filterChange) => {
+const Menu = (props, filterVal) => {
     if(props.meals.isLoading) {
         return(
             <div className='container'>
@@ -32,7 +32,7 @@ const Menu = (props, filterChange) => {
                     </Breadcrumb>
                     <div className="col-12">
                         <h3>Menu</h3>
-                        <Categories filterChange = {filterChange}/>
+                        <Categories filterChange = {props.filterChange}/>
                         <hr />
                      
                     </div>                

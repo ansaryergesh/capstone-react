@@ -44,7 +44,7 @@ class MainComponent extends Component {
             if (filters === 'All') {
               return this.props.meals
             }
-            const opt = this.props.meals.meals.meals.map(val => val.strCategory === filters);
+            const opt = this.props.meals.meals.meals.map(val => val.strCategory === this.props.filters);
             return opt;
         };
         
