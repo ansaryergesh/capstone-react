@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import * as ActionTypes from './ActionTypes';
 
 export const Categories = (state = 'All', action) => {
@@ -9,4 +10,3 @@ export const Categories = (state = 'All', action) => {
       return state;
   }
 };
-

@@ -1,16 +1,18 @@
-import {createStore, combineReducers, applyMiddleware} from 'redux';
-import {Meals} from './meals';
-import {Categories} from './categories';
+/* eslint-disable import/prefer-default-export */
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-export const ConfigureStore = () => {
-    const store = createStore(
-        combineReducers({
-            meals: Meals,
-            filters: Categories,
-        }),
-        applyMiddleware(thunk, logger)
-    );
+import { Meals } from './meals';
+import { Categories } from './categories';
 
-    return store;
-}
+export const ConfigureStore = () => {
+  const store = createStore(
+    combineReducers({
+      meals: Meals,
+      filters: Categories,
+    }),
+    applyMiddleware(thunk, logger),
+  );
+
+  return store;
+};
