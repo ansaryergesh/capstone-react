@@ -1,22 +1,23 @@
-import React, {Component} from 'react';
+/* eslint-disable react/prefer-stateless-function */
+import React, { Component } from 'react';
 import './App.css';
-import Main from './components/MainComponent'
 import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux'; 
+import { Provider } from 'react-redux';
+import Main from './components/MainComponent';
 import { ConfigureStore } from './redux/configureStore';
+
 const store = ConfigureStore();
 class App extends Component {
-
   render() {
     return (
       <Provider store={store}>
-          <BrowserRouter>
-           <div className="App">
+        <BrowserRouter>
+          <div className="App">
             <Main />
           </div>
         </BrowserRouter>
       </Provider>
- 
+
     );
   }
 }

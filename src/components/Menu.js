@@ -36,7 +36,7 @@ const Menu = (props) => {
         </Breadcrumb>
         <div className="col-12">
           <h3>Menu</h3>
-          <Categories filterChange={props.filterChange} />
+          <Categories val={props.filters} filterChange={props.filterChange} />
           <hr />
 
         </div>
