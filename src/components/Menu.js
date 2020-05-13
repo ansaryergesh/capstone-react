@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import {Loading} from './Loader';
 import Categories from './Categories';
 const Menu = (props, filterVal) => {
+    
     if(props.meals.isLoading) {
         return(
             <div className='container'>
@@ -38,7 +39,7 @@ const Menu = (props, filterVal) => {
                     </div>                
                 </div>
                 <div className="row">
-                    {props.meals.meals.meals.map(meal=>{
+                    {props.meals.map(meal=>{
                         return (
                             <div key={meal.idMeal} className="col-12 col-md-5 m-1">
                                 <Card>

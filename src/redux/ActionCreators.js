@@ -35,7 +35,7 @@ export const mealsFailed = (errmess) => ({
 
 export const addMeals = (meals) => ({
     type: ActionTypes.ADD_MEALS,
-    payload: meals
+    payload: meals.meals
 });
 
 

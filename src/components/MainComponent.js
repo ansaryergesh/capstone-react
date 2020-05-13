@@ -26,7 +26,6 @@ const mapDispathToProps = dispatch => ({
 class MainComponent extends Component {
     componentDidMount() {
         this.props.fetchMeals();
-        
     }
     
     render() {
@@ -39,13 +38,14 @@ class MainComponent extends Component {
                     />
             );
         }
-
+        const mealsList = this.props.meals.meals;
         const mealsFilter = filters => {
             if (filters === 'All') {
-              return this.props.meals
+              return this.props.meals.meals;
             }
-            const opt = this.props.meals.meals.meals.map(val => val.strCategory === this.props.filters);
-            return opt;
+          
+            const opt = this.props.meals.meals.filter(val => val.strCategory === this.props.filters);
+            return opt
         };
         
    
