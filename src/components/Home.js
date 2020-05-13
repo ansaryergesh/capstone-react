@@ -1,4 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable max-len */
+/* eslint arrow-parens: [2, "as-needed"] */
 import React from 'react';
 import {
   Card, CardBody, CardHeader,
