@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import * as ActionTypes from './ActionTypes';
+import * as ActionTypes from './actions/ActionTypes';
 
 export const Categories = (state = 'All', action) => {
   const { type } = action;

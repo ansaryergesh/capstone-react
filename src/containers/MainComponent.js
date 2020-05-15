@@ -8,13 +8,13 @@ import {
 } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import Home from './Home';
-import Header from './Header';
-import Menu from './Menu';
-import Footer from './Footer';
-import MealDetail from './DetailMenu';
-import { fetchMeals, filterChange } from '../redux/ActionCreators';
-import Contact from './Contact';
+import Home from '../components/Home';
+import Header from '../components/Header';
+import Menu from '../components/Menu';
+import Footer from '../components/Footer';
+import MealDetail from '../components/DetailMenu';
+import { fetchMeals, filterChange } from '../redux/actions/ActionCreators';
+import Contact from '../components/Contact';
 
 const mapStateToProps = state => ({
   meals: state.meals || [],

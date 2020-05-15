@@ -1,7 +1,7 @@
 /* eslint-disable no-use-before-define */
 /* eslint arrow-parens: [2, "as-needed"] */
 import * as ActionTypes from './ActionTypes';
-import { url } from '../shared/url';
+import { url } from '../../shared/url';
 
 
 export const fetchMeals = () => dispatch => {
@@ -37,42 +37,6 @@ export const mealsFailed = errmess => ({
 export const addMeals = meals => ({
   type: ActionTypes.ADD_MEALS,
   payload: meals.meals,
-});
-
-
-export const fetchCategories = () => dispatch => {
-  dispatch(categoriesLoading(true));
-  return fetch(`${url}list.php?c=list`)
-    .then(response => {
-      if (response.ok) {
-        return response;
-      }
-
-      const error = new Error(`Error ${response.status}: ${response.statusText}`);
-      error.response = response;
-      throw error;
-    },
-    error => {
-      const errmess = new Error(error.message);
-      throw errmess;
-    })
-    .then(response => response.json())
-    .then(categories => dispatch(addCategories(categories)))
-    .catch(error => dispatch(categoriesFailed(error.message)));
-};
-
-export const categoriesLoading = () => ({
-  type: ActionTypes.CATEGORIES_LOADING,
-});
-
-export const categoriesFailed = errmess => ({
-  type: ActionTypes.CATEGORIES_FAILED,
-  payload: errmess,
-});
-
-export const addCategories = categories => ({
-  type: ActionTypes.ADD_CATEGORIES,
-  payload: categories,
 });
 
 export const filterChange = filters => ({
