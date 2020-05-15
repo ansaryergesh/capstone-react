@@ -2,8 +2,7 @@
 
 ## Description
 
-Make project with fetching API. Used react-thunk middleware for for asynchronous requests to the external API, for receiving or saving data and react-redux to save states into store. Project is simple SPA with three navigation page with unique route path.
-
+Make a project with fetching API. Used react-thunk middleware for asynchronous requests to the external API, for receiving or saving data and react-redux to save states into the store. The project is a simple SPA with three navigation page with a unique route path.
 ### Install, Run and Build program
 
 ```
@@ -27,7 +26,7 @@ npm run build
 
 ## API
 
-- To receive data used used a ready-made [API](themealdb.com)
+- To receive data used a ready-made [API](themealdb.com)
 
 ## Author:
 
