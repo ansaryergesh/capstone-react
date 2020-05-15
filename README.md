@@ -17,7 +17,7 @@ npm run build
 
 ## Live Demo
 
-[Live Demo](https://capstonereact.ansaryergesh.com)
+[Live Demo](https://reactcapstone.ansaryergesh.com)
 
 ## Built With
 
