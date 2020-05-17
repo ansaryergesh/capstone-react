@@ -17,12 +17,12 @@ describe('meals reducer', () => {
     expect(
       Meals([], {
         type: ActionTypes.ADD_MEALS,
-        meals: 'meals',
+        payload: 'meals',
       }),
     ).toEqual({
       isLoading: false,
       errMess: null,
-      meals: undefined,
+      meals: 'meals',
     });
   });
 
@@ -50,10 +50,10 @@ describe('category reducer', () => {
     expect(
       Categories([], {
         type: ActionTypes.FILTER_CATEGORY,
-        filters: 'Chicken',
+        payload: { filters: 'Chicken' },
       }),
     ).toEqual(
-      'Chicken',
+      { filters: 'Chicken' },
     );
   });
 });
