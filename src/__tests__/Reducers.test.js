@@ -13,6 +13,19 @@ describe('meals reducer', () => {
     );
   });
 
+
+  it('should return the add meals action', () => {
+    expect(
+      Meals([], {
+        type: ActionTypes.MEALS_LOADING,
+      }),
+    ).toEqual({
+      isLoading: true,
+      errMess: null,
+      meals: [],
+    });
+  });
+
   it('should return the add meals action', () => {
     expect(
       Meals([], {
@@ -26,14 +39,15 @@ describe('meals reducer', () => {
     });
   });
 
-  it('should return the add meals action', () => {
+  it('should return the meals failed action', () => {
     expect(
       Meals([], {
-        type: ActionTypes.MEALS_LOADING,
+        type: ActionTypes.MEALS_FAILED,
+        payload: 'Meals Failed',
       }),
     ).toEqual({
-      isLoading: true,
-      errMess: null,
+      isLoading: false,
+      errMess: 'Meals Failed',
       meals: [],
     });
   });
