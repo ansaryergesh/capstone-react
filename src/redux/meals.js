@@ -1,7 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import * as ActionTypes from './actions/ActionTypes';
 
-
 export const Meals = (state = {
   isLoading: true,
   errMess: null,

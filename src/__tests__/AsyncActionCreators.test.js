@@ -21,12 +21,12 @@ describe('async actions', () => {
 
     const expectedActions = [
       { type: ActionTypes.MEALS_LOADING },
+      { type: ActionTypes.MEALS_FAILED },
       { type: ActionTypes.ADD_MEALS, body: { meals: ['do something'] } },
     ];
     const store = mockStore({ meals: [] });
 
     return store.dispatch(ActionCreators.fetchMeals()).then(() => {
-      // return of async actions
       expect(store.getActions()).toEqual(expectedActions);
     });
   });

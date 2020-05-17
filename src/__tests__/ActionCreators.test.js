@@ -14,7 +14,7 @@ describe('actions', () => {
 });
 
 describe('actions', () => {
-  it('should create an action to add a meals', () => {
+  it('should create an action filter change', () => {
     const filters = 'Chicken';
     const expectedAction = {
       type: ActionTypes.FILTER_CATEGORY,
