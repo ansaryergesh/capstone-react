@@ -22,7 +22,7 @@ describe('meals reducer', () => {
     ).toEqual({
       isLoading: false,
       errMess: null,
-      meals: 'meals',
+      meals: undefined,
     });
   });
 
@@ -36,5 +36,24 @@ describe('meals reducer', () => {
       errMess: null,
       meals: [],
     });
+  });
+});
+
+describe('category reducer', () => {
+  it('should return the initial state', () => {
+    expect(Categories(undefined, {})).toEqual(
+      'All',
+    );
+  });
+
+  it('should return the add meals action', () => {
+    expect(
+      Categories([], {
+        type: ActionTypes.FILTER_CATEGORY,
+        filters: 'Chicken',
+      }),
+    ).toEqual(
+      'Chicken',
+    );
   });
 });
