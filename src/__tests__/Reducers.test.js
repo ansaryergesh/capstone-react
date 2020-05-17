@@ -43,11 +43,11 @@ describe('meals reducer', () => {
     expect(
       Meals([], {
         type: ActionTypes.MEALS_FAILED,
-        payload: 'Meals Failed',
+        payload: 'Meals Failed to Fetch',
       }),
     ).toEqual({
       isLoading: false,
-      errMess: 'Meals Failed',
+      errMess: 'Meals Failed to Fetch',
       meals: [],
     });
   });

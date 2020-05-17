@@ -2,6 +2,7 @@ import expect from 'expect';
 import fetchMock from 'fetch-mock';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 import * as ActionTypes from '../redux/actions/ActionTypes';
 import * as ActionCreators from '../redux/actions/ActionCreators';
 
@@ -14,15 +15,14 @@ describe('async actions', () => {
   });
 
   it('creates FETCH_MEALS when fetching meals has been done', () => {
-    fetchMock.getOnce('/menu', {
-      body: { meals: ['do something'] },
+    fetchMock.getOnce('', {
+      meals: { meals: ['do something'] },
       headers: { 'content-type': 'application/json' },
     });
 
     const expectedActions = [
       { type: ActionTypes.MEALS_LOADING },
-      { type: ActionTypes.MEALS_FAILED },
-      { type: ActionTypes.ADD_MEALS, body: { meals: ['do something'] } },
+      { type: ActionTypes.ADD_MEALS, payload: { meals: ['do something'] } },
     ];
     const store = mockStore({ meals: [] });
 
