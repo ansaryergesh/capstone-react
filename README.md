@@ -47,9 +47,6 @@ Feel free to check the [issues page](issues/).
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
-
-This page was inspired by my own bussines i'm a food-seller on my free times while im not writing code.
 
 ## 📝 License
 
