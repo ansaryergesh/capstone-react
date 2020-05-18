@@ -1,6 +1,5 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
-/* eslint arrow-parens: [2, "as-needed"] */
 import React from 'react';
 import {
   Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem, CardText,
@@ -9,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { Loading } from './Loader';
 import Categories from './Categories';
 
-const Menu = props => {
+const Menu = (props) => {
   if (props.meals.isLoading) {
     return (
       <div className="container">
@@ -43,7 +42,7 @@ const Menu = props => {
         </div>
       </div>
       <div className="row">
-        {props.meals.map(meal => (
+        {props.meals.map((meal) => (
           <div key={meal.idMeal} className="col-12 col-md-5 m-1">
             <Card>
               <Link to={`/menu/${meal.idMeal}`}>

@@ -2,7 +2,6 @@ import expect from 'expect';
 import fetchMock from 'fetch-mock';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import logger from 'redux-logger';
 import * as ActionTypes from '../redux/actions/ActionTypes';
 import * as ActionCreators from '../redux/actions/ActionCreators';
 

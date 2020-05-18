@@ -1,5 +1,3 @@
-/* eslint-disable max-len */
-/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/no-access-state-in-setstate */
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
@@ -64,7 +62,10 @@ class Header extends Component {
             <div className="row row-header">
               <div className="col-12 col-sm-6">
                 <h1>Restaurant Rixos</h1>
-                <p>We take inspiration from the World's best cuisines, and create a unique fusion experience.Text text text ewedsadalsd;l!</p>
+                <p>
+                  We take inspiration from the
+                  best cuisines, and create a unique fusion experience.Text text text ewedsadalsd;l!
+                </p>
               </div>
             </div>
           </div>
