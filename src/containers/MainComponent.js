@@ -20,7 +20,7 @@ const mapStateToProps = state => ({
   filters: state.filters || [],
 });
 
-const mapDispathToProps = dispatch => ({
+const mapDispacthToProps = dispatch => ({
   fetchMeals: () => { dispatch(fetchMeals()); },
   filterChange: filters => { dispatch(filterChange(filters)); },
 });
@@ -70,4 +70,4 @@ class MainComponent extends Component {
     );
   }
 }
-export default withRouter(connect(mapStateToProps, mapDispathToProps)(MainComponent));
+export default withRouter(connect(mapStateToProps, mapDispacthToProps)(MainComponent));
