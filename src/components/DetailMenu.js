@@ -66,6 +66,7 @@ const MealDetail = (props) => {
       <div className="container">
         <div className="row">
           <Breadcrumb>
+            <BreadcrumbItem><Link to="/Home">Home</Link></BreadcrumbItem>
             <BreadcrumbItem><Link to="/menu">Menu</Link></BreadcrumbItem>
             <BreadcrumbItem active>{props.meal.strMeal}</BreadcrumbItem>
           </Breadcrumb>
