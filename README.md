@@ -3,6 +3,7 @@
 ## Description
 
 Make a project with fetching API. Used react-thunk middleware for asynchronous requests to the external API, for receiving or saving data and react-redux to save states into the store. The project is a simple SPA with three navigation page with a unique route path.
+
 ### Install, Run and Build program
 
 ```
@@ -23,6 +24,11 @@ npm run build
 - React
 - Redux
 - Javascript ES6+
+- Bootstrap 4
+
+## Screenshot
+
+![alt text](123.png)
 
 ## API
 
@@ -46,7 +52,6 @@ Feel free to check the [issues page](issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
 
 ## 📝 License
 
