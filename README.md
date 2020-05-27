@@ -29,6 +29,8 @@ npm run build
 ## Screenshot
 
 ![alt text](123.png)
+## Future Features
+Make function for contact form to send feedback
 
 ## API
 
