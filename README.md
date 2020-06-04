@@ -30,7 +30,7 @@ npm test
 
 - React
 - Redux
-- Javascript ES6+
+- JavaScript
 - Bootstrap 4
 
 ## Screenshot
