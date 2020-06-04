@@ -15,6 +15,13 @@ npm run build
 
 ```
 
+### Testing
+Testing is important part of projects. You can find test by this path: "src/__tests__".
+Write following command to run tests:
+```
+npm test
+```
+
 ## Live Demo
 
 [Live Demo](https://reactcapstone.ansaryergesh.com)
@@ -29,8 +36,10 @@ npm run build
 ## Screenshot
 
 ![alt text](123.png)
+
 ## Future Features
-Make function for contact form to send feedback
+- Make function for contact form to send feedback
+- Include SASS for styling
 
 ## API
 
