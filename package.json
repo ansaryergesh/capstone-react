@@ -10,7 +10,7 @@
     "fetch-mock": "^9.9.0",
     "font-awesome": "^4.7.0",
     "history": "^4.10.1",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^3.1.1",
     "react": "^16.13.1",
     "react-animation-components": "^3.0.0",
     "react-dom": "^16.13.1",
